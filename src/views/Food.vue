@@ -1,5 +1,6 @@
 <template id="food">
-  <div class="about">
+  <div class="about container">
+    <h2 class="datas-titles title">Шаурма</h2>
     <div id="Шаурма" class="datas">
       <div class="card" v-for="ok in new Array(6)" :key="ok">
         <div class="card-content">
@@ -28,6 +29,7 @@
         </div>
       </div>
     </div>
+    <h2 class="datas-titles title">Бургеры</h2>
     <div id="Бургеры" class="datas">
       <div class="card" v-for="ok in new Array(6)" :key="ok">
         <div class="card-content">
@@ -56,6 +58,7 @@
         </div>
       </div>
     </div>
+    <h2 class="datas-titles title">Лаваш</h2>
     <div id="Лаваш" class="datas">
       <div class="card" v-for="ok in new Array(4)" :key="ok">
         <div class="card-content">
@@ -84,6 +87,7 @@
         </div>
       </div>
     </div>
+    <h2 class="datas-titles title">Блюда</h2>
     <div id="Блюда" class="datas">
       <div class="card" v-for="ok in new Array(6)" :key="ok">
         <div class="card-content">
@@ -112,6 +116,7 @@
         </div>
       </div>
     </div>
+    <h2 class="datas-titles title">Десерты</h2>
     <div id="Десерты" class="datas">
       <div class="card" v-for="ok in new Array(3)" :key="ok">
         <div class="card-content">
@@ -168,6 +173,7 @@ export default {
     },
   },
   mounted() {
+    document.getElementById(`button-${0}`).classList.add("is-primary");
     // var ok = new IntersectionObserver((entries) => {
     //   entries.forEach((entry) => {
     //     entry.target.cla
@@ -176,7 +182,7 @@ export default {
     // var docs = document.getElementById(`button-${0}`);
     // ok.observe(docs);
     window.addEventListener("scroll", () => {
-      if (Math.abs(this.desert.getBoundingClientRect().top < 150)) {
+      if (Math.abs(this.desert.getBoundingClientRect().top < 400)) {
         document.getElementById(`button-${4}`).classList.add("is-primary");
       } else {
         document.getElementById(`button-${4}`).classList.remove("is-primary");
@@ -219,10 +225,18 @@ export default {
 </script>
 
 <style>
+.datas-titles {
+  position: absolute;
+  padding-top: 20px;
+}
 .fix {
   position: fixed;
 }
+.about {
+  padding-bottom: 100px;
+}
 .datas {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 20px;

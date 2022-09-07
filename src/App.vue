@@ -33,9 +33,12 @@ html {
   scroll-behavior: smooth;
 }
 .navbarr {
+  display: flex;
+  justify-content: center;
   position: fixed;
   top: 0;
-  background-color: #309b42;
+  background-color: #fff;
+  box-shadow: inset 0 -1px 0 #e5e5e5;
   width: 100%;
   z-index: 99;
 }

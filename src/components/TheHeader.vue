@@ -33,7 +33,7 @@ export default {
       routes: [
         {
           id: 1,
-          name: "shaurma",
+          name: "Шаурма",
           hash: "#Шаурма",
         },
         {
@@ -79,6 +79,7 @@ export default {
 <style>
 .button {
   margin-right: 12px;
+  border: none !important;
 }
 .nav-bar {
   display: flex;
