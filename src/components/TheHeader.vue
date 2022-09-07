@@ -1,23 +1,44 @@
 <template>
-  <div class="nav-bar">
-    {{ elemenet }}
-    <router-link
-      class="button"
-      ref="ok"
-      :id="`button-${id}`"
-      v-for="(route, id) in routes"
-      :key="id"
-      :to="{ path: `/food${route.hash}` }"
-    >
-      {{ route.name }}
-    </router-link>
-    <!-- {{ activeBtn }} -->
+  <div class="carusell">
+    <VueSlickCarousel v-bind="settings">
+      <div>
+        <router-link class="button" id="button-0" to="/food#Шаурма">
+          Шаурма
+        </router-link>
+      </div>
+      <div>
+        <router-link class="button" id="button-1" to="/food#Бургеры">
+          Бургеры
+        </router-link>
+      </div>
+      <div>
+        <router-link class="button" id="button-2" to="/food#Лаваш">
+          Лаваш
+        </router-link>
+      </div>
+      <div>
+        <router-link class="button" id="button-3" to="/food#Блюда">
+          Блюда
+        </router-link>
+      </div>
+      <div>
+        <router-link class="button" id="button-4" to="/food#Десерты">
+          Десерты
+        </router-link>
+      </div>
+    </VueSlickCarousel>
   </div>
 </template>
 
 <script>
+import VueSlickCarousel from "vue-slick-carousel";
+import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
+
 export default {
   name: "TheHeader",
+  components: {
+    VueSlickCarousel,
+  },
   mounted() {
     setInterval(() => {
       document.querySelectorAll(".button").forEach((item) => {
@@ -29,6 +50,16 @@ export default {
   },
   data() {
     return {
+      settings: {
+        // dots: true,
+        focusOnSelect: true,
+        infinite: true,
+        initialSlide: 1,
+        speed: 500,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        swipeToSlide: true,
+      },
       ok: null,
       routes: [
         {
@@ -77,6 +108,25 @@ export default {
 </script>
 
 <style>
+.carusell {
+  width: 800px;
+  /* overflow-y: auto; */
+}
+a {
+  color: black !important;
+}
+.slick-slider {
+  width: 250px !important;
+}
+.slick-list {
+  width: 285px;
+}
+.route-wrapper {
+  display: flex !important;
+}
+.slick-slide {
+  width: 30% !important;
+}
 .button {
   margin-right: 12px;
   border: none !important;

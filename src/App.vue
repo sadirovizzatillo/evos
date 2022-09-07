@@ -32,14 +32,17 @@ export default {
 html {
   scroll-behavior: smooth;
 }
+.slick-track {
+  display: flex;
+}
 .navbarr {
   display: flex;
-  justify-content: center;
   position: fixed;
   top: 0;
   background-color: #fff;
   box-shadow: inset 0 -1px 0 #e5e5e5;
   width: 100%;
+  height: 70px;
   z-index: 99;
 }
 #app {
