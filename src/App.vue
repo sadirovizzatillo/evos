@@ -35,7 +35,7 @@ html {
 .navbarr {
   position: fixed;
   top: 0;
-  background-color: #42b983;
+  background-color: #309b42;
   width: 100%;
   z-index: 99;
 }
@@ -56,7 +56,7 @@ nav a {
   color: #2c3e50;
 }
 
-nav a.router-link-exact-active {
+/* nav a.router-link-exact-active {
   color: #42b983;
-}
+} */
 </style>
