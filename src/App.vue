@@ -20,7 +20,7 @@ export default {
     },
   },
   watch: {
-    route(newW, oldW) {
+    activeBtn(newW, oldW) {
       console.log("yangi", newW);
       console.log("eski", oldW);
     },
@@ -29,6 +29,9 @@ export default {
 </script>
 
 <style>
+html {
+  scroll-behavior: smooth;
+}
 .navbarr {
   position: fixed;
   top: 0;
@@ -45,7 +48,7 @@ export default {
 }
 
 nav {
-  padding: 30px;
+  padding: 12px;
 }
 
 nav a {

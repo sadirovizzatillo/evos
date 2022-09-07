@@ -24,6 +24,7 @@
             <br />
             <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
           </div>
+          <button class="button">В корзину</button>
         </div>
       </div>
     </div>
@@ -46,12 +47,12 @@
           </div>
 
           <div class="content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-            nec iaculis mauris. <a>@bulmaio</a>. <a href="#">#css</a>
-            <a href="#">#responsive</a>
+            Жареное куриное филе в лаваше со свежими огурцами и помидорами,
+            хрустящими чипсами и нашим фирменным томатным соусом
             <br />
             <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
           </div>
+          <button class="button">В корзину</button>
         </div>
       </div>
     </div>
@@ -79,6 +80,7 @@
             <br />
             <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
           </div>
+          <button class="button">В корзину</button>
         </div>
       </div>
     </div>
@@ -101,12 +103,12 @@
           </div>
 
           <div class="content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-            nec iaculis mauris. <a>@bulmaio</a>. <a href="#">#css</a>
-            <a href="#">#responsive</a>
+            Сытный набор из сочного куриного мяса, картофеля фри, риса и
+            овощного салата. Подается с нашим фирменным томатным соусом
             <br />
             <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
           </div>
+          <button class="button">В корзину</button>
         </div>
       </div>
     </div>
@@ -133,6 +135,7 @@
             <br />
             <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
           </div>
+          <button class="button">В корзину</button>
         </div>
       </div>
     </div>
@@ -165,6 +168,13 @@ export default {
     },
   },
   mounted() {
+    // var ok = new IntersectionObserver((entries) => {
+    //   entries.forEach((entry) => {
+    //     entry.target.cla
+    //   });
+    // });
+    // var docs = document.getElementById(`button-${0}`);
+    // ok.observe(docs);
     window.addEventListener("scroll", () => {
       if (Math.abs(this.desert.getBoundingClientRect().top < 150)) {
         document.getElementById(`button-${4}`).classList.add("is-primary");
@@ -220,7 +230,7 @@ export default {
 }
 .media {
   flex-direction: column;
-  align-items: center;
+  align-items: center !important;
 }
 .card {
   max-width: 350px;

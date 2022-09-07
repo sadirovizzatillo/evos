@@ -1,7 +1,9 @@
 <template>
-  <div>
+  <div class="nav-bar">
+    {{ elemenet }}
     <router-link
       class="button"
+      ref="ok"
       :id="`button-${id}`"
       v-for="(route, id) in routes"
       :key="id"
@@ -9,14 +11,25 @@
     >
       {{ route.name }}
     </router-link>
+    <!-- {{ activeBtn }} -->
   </div>
 </template>
 
 <script>
 export default {
   name: "TheHeader",
+  mounted() {
+    setInterval(() => {
+      document.querySelectorAll(".button").forEach((item) => {
+        if (item.classList.contains("is-primary")) {
+          return item.scrollIntoView();
+        }
+      });
+    }, 300);
+  },
   data() {
     return {
+      ok: null,
       routes: [
         {
           id: 1,
@@ -46,11 +59,31 @@ export default {
       ],
     };
   },
+  computed: {
+    activeBtn() {
+      return document.querySelector(".is-primary");
+    },
+    elemenet() {
+      return this.$store.state.element;
+    },
+  },
+  // watch: {
+  //   elemenet(newW, old) {
+  //     console.log(newW);
+  //     return newW;
+  //   },
+  // },
 };
 </script>
 
 <style>
 .button {
   margin-right: 12px;
+}
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  width: 457px;
+  scroll-behavior: smooth;
 }
 </style>
