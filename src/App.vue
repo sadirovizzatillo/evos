@@ -36,6 +36,7 @@ html {
   display: flex;
 }
 .navbarr {
+  justify-content: center;
   display: flex;
   position: fixed;
   top: 0;
